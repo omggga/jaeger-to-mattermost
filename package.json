@@ -1,6 +1,7 @@
 {
   "name": "jaeger-to-mattermost",
   "version": "1.0.0",
+  "type": "module",
   "description": "Application get data from Jaeger Opentracing every X minutes and POST to Mattermost webhook",
   "main": "index.js",
   "scripts": {
@@ -19,6 +20,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "moment": "^2.29.4",
     "node-fetch": "^3.3.1"
   }
 }
