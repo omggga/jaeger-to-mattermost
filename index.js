@@ -5,22 +5,24 @@ const app = express()
 let timer
 
 app.get('/', (req, res) => {
-	res.send('Hello, Express!')
+	res.send('Hello, Jaeger-to-Mattermost!')
 })
 
-// Stop app from fetching data
-app.post('/stop', (req, res) => {
+app.get('/start', async (req, res) => {
+	timer = await jaegerToMattermost()
+	res.send('Starting service...')
+})
+
+app.get('/stop', (req, res) => {
 	clearTimeout(timer)
-	res.send('Jaeger data fetching stopped!')
+	res.send('Service has been stopped.')
 })
 
 app.use((err, req, res, next) => {
 	res.status(500).send('Internal Server Error')
 })
 
-const port = process.env.PORT || 6000
+const port = process.env.PORT || 3005
 app.listen(port, () => {
 	console.log(`Server listening on port ${port}...`)
-	const interval = jaegerToMattermost()
-	timer = interval
 });
