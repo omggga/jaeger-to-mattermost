@@ -30,12 +30,10 @@ To start the app, make a GET request to ```http://domain.com:3005/start```, and 
 The default configuration parameters are:
 
 ```javascript
-const defaults = {
-	start: new Date().getTime(), // The time app start to search error traces
+	start: new Date().getTime() - backInverval , // The time app start to search error traces
 	backInverval: 2 * 60000, // The interval between start and end paremeters of jaeger
 	requestInterval: 1 * 60000, // The interval app request data from jaeger
 	limit: 5 //Prevent spam when there is a lot of errors
-}
 ```
 
 ## Contributing
