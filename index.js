@@ -18,7 +18,7 @@ app.get('/stop', (req, res) => {
 	res.send('Service has been stopped.')
 })
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
 	res.status(500).send('Internal Server Error')
 })
 
