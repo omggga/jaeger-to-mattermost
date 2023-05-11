@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Application get data from Jaeger Opentracing every X minutes and POST to Mattermost webhook",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
-    "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",

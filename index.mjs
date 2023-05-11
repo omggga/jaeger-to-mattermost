@@ -1,5 +1,5 @@
 import express from 'express'
-import jaegerToMattermost from './lib/app.js'
+import jaegerToMattermost from './lib/app.mjs'
 
 const app = express()
 let timer
@@ -18,7 +18,7 @@ app.get('/stop', (req, res) => {
 	res.send('Service has been stopped.')
 })
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
 	res.status(500).send('Internal Server Error')
 })
 
