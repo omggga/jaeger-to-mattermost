@@ -16,12 +16,12 @@ If you are using only Node.js, follow these steps in the app directory:
 
 ```javascript
 npm install
-node ./index.js
+node ./index.mjs
 ```
 
 ## How to start application
 
-To start the application, you should use the web interface. By default, the app runs on port 3005, but you can change it in ```index.js```.
+To start the application, you should use the web interface. By default, the app runs on port 3005, but you can change it in ```index.mjs```.
 
 To start the app, make a GET request to ```http://domain.com:3005/start```, and to stop it, make a GET request to ```http://domain.com:3005/stop```.
 
@@ -30,8 +30,8 @@ To start the app, make a GET request to ```http://domain.com:3005/start```, and 
 The default configuration parameters are:
 
 ```javascript
-start: new Date().getTime() - backInverval , // The time app start to search error traces
-backInverval: 2 * 60000, // The interval between start and end paremeters of jaeger
+start: new Date().getTime() - backInterval , // The time app start to search error traces
+backInterval: 2 * 60000, // The interval between start and end parameters of jaeger
 requestInterval: 1 * 60000, // The interval app request data from jaeger
 limit: 5 //Prevent spam when there is a lot of errors
 ```
