@@ -16,6 +16,7 @@ app.get('/stop', (_req, res) => {
   res.send('Service has been stopped.')
 })
 
+/* eslint-disable-next-line no-unused-vars */
 app.use((err, _req, res, _next) => {
   console.error(err)
   res.status(500).send('Internal Server Error')
