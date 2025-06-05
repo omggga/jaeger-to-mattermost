@@ -12,7 +12,7 @@ docker build . -t $NAME
 docker run -d -e NAME=$NAME -p 3005:3005 --restart always $NAME
 ```
 
-If you are using only Node.js, follow these steps in the app directory:
+If you are using only Node.js, follow these steps in the app directory. Make sure you are running Node.js 20 (LTS):
 
 ```javascript
 npm install
